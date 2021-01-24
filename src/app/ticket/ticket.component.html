@@ -1,0 +1,11 @@
+<div  class="ticketCover container text-center">
+  <div class="row">
+    <div class="col-auto mr-auto"><strong>{{data.playerName}} - {{data.ticketId}}</strong> </div>
+    <!-- <div class="col-auto"><button type="button" class="btn close" (click)="deleteTicket()"><span>×</span> </button></div> -->
+  </div>
+    <div class="row  justify-content-center" *ngFor="let numArray of data.ticketGrid;let j=index">
+     <div *ngFor="let num of numArray; let i = index" [style.background-color] = "changeColor[j][i]? 'red' : 'green'" class="col-sm item fixwidth "  (click)="changeColor[j][i]=!changeColor[j][i]; check(num,numArray[i],changeColor[i],i,j)" >
+     {{num!=0?num:''}}
+     </div>
+     </div>
+  </div>

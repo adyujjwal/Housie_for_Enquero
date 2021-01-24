@@ -1,0 +1,14 @@
+<div class="input-group pt-1 mb-3" style="margin-top: 3%;">
+  <input type="text" class="form-control" placeholder="Please Enter Your Name"  #player_name aria-label="Player name" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-primary" type="button" (click)="addPlayer(player_name.value);player_name.value=''">Add</button>
+  </div>
+</div>
+
+<div class="accordion" id="accordionExample">
+  <div class="card" *ngFor="let player of players;let i = index">
+<app-player (deleteEvent)='deletePlayer(i)' playerIndex={{i}}></app-player>
+  </div>
+</div>
+
+
